@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCOdySqopLMK5rGh8J5G2_sSRPJgHmski4",
-  authDomain: "twit-dashboard.firebaseapp.com",
-  projectId: "twit-dashboard",
-  storageBucket: "twit-dashboard.appspot.com",
-  messagingSenderId: "323574773953",
-  appId: "1:323574773953:web:b47aa996846fe839a03c40",
-  measurementId: "G-H4JM4W842Z"
+  apiKey: process.env.VITE_APIKEY,
+  authDomain: process.env.VITE_AUTHDOMAIN,
+  projectId: process.env.VITE_PROJECTID,
+  storageBucket: process.env.VITE_STORAGEBUCKET,
+  messagingSenderId: process.env.VITE_MESSAGINGSENDERID,
+  appId: process.env.VITE_APPID,
+  measurementId: process.env.VITE_MEASUREMENTID,
 };
 
 // Initialize Firebase
