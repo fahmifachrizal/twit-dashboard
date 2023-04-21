@@ -3,12 +3,22 @@ import { HiOutlineDocumentReport, HiOutlineInbox } from "react-icons/hi";
 import { FaRegImages, FaRegUserCircle } from "react-icons/fa";
 import { BiStats } from "react-icons/bi";
 import { useRouter } from 'next/router'
+import logo from "/public/twit.png"
+import Image from "next/image";
 
 function SideBar() {
   const { asPath } = useRouter()
   return (
-    <div className='bg-[#101f27] min-h-screen w-64 text-[#afb7bb] py-10 px-8 select-none font-raleway flex flex-col'>
-      <div>LOGO</div>
+    <div className='bg-[#101f27] min-h-screen min-w-fit text-[#afb7bb] py-10 px-8 select-none font-raleway flex flex-col'>
+      <div className="flex gap-x-2 items-center">
+        <Image
+          src={logo.src}
+          alt='bg'
+          width={40}
+          height={40}
+        />
+        <span className="text-2xl font-bold text-white">Dashboard</span>
+      </div>
       <div className="mt-10 flex flex-col gap-y-8 flex-1">
         <div className="flex flex-col gap-y-6">
           <button className={`flex gap-x-3 items-center hover:text-[#03a9f4] ${asPath=='/'?'font-semibold text-[#03a9f4]':''}`}><MdOutlineSpaceDashboard className=""/>Overview</button>
