@@ -1,4 +1,4 @@
-import { getSession, signOut, useSession } from 'next-auth/react'
+import { getSession } from 'next-auth/react'
 import Header from '../components/Header'
 import { useEffect, useState } from 'react';
 

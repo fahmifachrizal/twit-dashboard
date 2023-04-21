@@ -1,4 +1,5 @@
 'use client'
+import { signOut } from 'next-auth/react'
 import { useState } from 'react'
 import { HiBell } from 'react-icons/hi'
 
@@ -20,9 +21,9 @@ function Header({user, title, subtitle}) {
             <img src={user.image} ferrerpolicy='no-referrer' alt='profile' className='w-10 h-10 rounded-full object-cover' />
           </div>
           { toggleButton.profile && 
-            <div className='absolute -bottom-10 w-48 bg-white right-0 translate-y-1/2 flex flex-col gap-y-1 p-1 text-sm rounded-l-lg rounded-br-lg ring ring-gray-300'>
+            <div className='absolute top-12 w-48 bg-white right-0 flex flex-col gap-y-1 p-1 text-sm rounded-l-lg rounded-br-lg ring ring-gray-300'>
               <a className='hover:bg-gray-200 py-1 rounded-lg w-full text-center cursor-pointer'>Profile</a>
-              <button className='hover:bg-red-600 hover:text-white py-1 rounded-lg w-full'>Log out</button>
+              <button className='hover:bg-red-600 hover:text-white py-1 rounded-lg w-full' onClick={()=>signOut()}>Log out</button>
             </div>
           }
         </div>
@@ -31,9 +32,8 @@ function Header({user, title, subtitle}) {
         >
           <HiBell />
           { toggleButton.notif && 
-            <div className='absolute -bottom-10 w-48 bg-white right-0 translate-y-1/2 flex flex-col gap-y-1 p-1 text-sm rounded-l-lg rounded-br-lg ring ring-gray-300'>
-              <a className='hover:bg-gray-200 py-1 rounded-lg w-full text-center cursor-pointer'>Profile</a>
-              <button className='hover:bg-red-600 hover:text-white py-1 rounded-lg w-full'>Log out</button>
+            <div className='absolute top-12 w-48 bg-white right-0 flex flex-col gap-y-1 p-1 text-sm rounded-l-lg rounded-br-lg ring ring-gray-300'>
+              <a className='py-1 rounded-lg w-full text-center cursor-pointer'>{`You don't have any new notifications`}</a>
             </div>
           }
         </div>
