@@ -3,7 +3,7 @@ import { signOut } from 'next-auth/react'
 import { useState } from 'react'
 import { HiBell } from 'react-icons/hi'
 
-function Header({user, title, subtitle}) {
+function Header({ user, title, subtitle }) {
   const [toggleButton, setToggleButton] = useState({notif:false, profile:false})
 
   return (
