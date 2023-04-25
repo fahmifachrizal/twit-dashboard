@@ -16,11 +16,15 @@ export default async (req, res) => {
     }
 
     const TClient = new TwitterApi(options);
-    const { relationship } = await TClient.v1.friendship({ target_screen_name: 'NASA' })
+    const { name, screen_name, location, description,  created_at, profile_banner_url, profile_image_url_https,
+      followers_count, friends_count, favourites_count, statuses_count }  = await TClient.v1.verifyCredentials();
 
     res.status(200).json({
       status: 'Ok',
-      following: relationship.source.following,
+      user:{
+        name, screen_name, location, description,  created_at, profile_banner_url, profile_image_url_https,
+        followers_count, friends_count, favourites_count, statuses_count
+      },
     });
   } catch(error) {
     res.status(400).json(error);

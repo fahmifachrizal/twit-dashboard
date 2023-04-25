@@ -12,6 +12,7 @@ export default NextAuth({
     async jwt({ token, user, account, profile }) { 
       if (account) {
         token[account.provider] = {
+          id: account.providerAccountId,
           oauth_token: account.oauth_token,
           oauth_token_secret: account.oauth_token_secret,
         }
