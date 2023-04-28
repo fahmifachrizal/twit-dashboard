@@ -2,10 +2,15 @@ import { getSession, signIn } from 'next-auth/react'
 import { BsTwitter } from 'react-icons/bs'
 import bgImage from "/public/bg-login-comp.png"
 import Image from 'next/image'
+import Head from 'next/head'
 
 function LoginPage({ session }) {
   return (
     <div className='h-screen w-screen relative bg-black'>
+      <Head>
+        <title>Login</title>
+        <meta property="og:title" content="Twit-Dashboard" key="login" />
+      </Head>
         <Image
           src={bgImage.src}
           alt='bg'

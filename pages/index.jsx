@@ -6,6 +6,7 @@ import BarGraph from '@/components/widgets/BarGraph';
 import LineGraph from '@/components/widgets/LineGraph';
 import AreaGraph from '@/components/widgets/AreaGraph';
 import HeatMap from '@/components/widgets/HeatMap';
+import Head from 'next/head';
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -59,6 +60,10 @@ function OverviewPage({ session, following }) {
 
   return (
     <div className='w-full min-h-screen py-10 px-16 flex flex-col bg-gray-200'>
+      <Head>
+        <title>Twit-Dashboard</title>
+        <meta property="og:title" content="Twit-Dashboard" key="title" />
+      </Head>
       <div>
         <Header user={session.user} title={'Overview'} subtitle={'Take a closer look on how your social media accounts are performing'}/>
       </div>
