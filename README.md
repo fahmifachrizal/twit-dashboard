@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Change Logs
 
 Tue, 25 April 2023 - Twitter metrics and dashboard added
+Tue, 28 April 2023 - Twitter API v2 mandatory changes, title:meta page added
 
 ## Getting Started
 
